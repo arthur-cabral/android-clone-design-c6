@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp"
+    android:id="@+id/container_app"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.AppFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/light_gray"
+        android:textSize="12sp"
+        android:text="@string/text_greetings"/>
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="@string/text_name_user"/>
+
+    <ImageButton
+        android:id="@+id/button_help"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_help_outline_24"
+        android:background="@null" />
+
+    <ImageButton
+        android:id="@+id/button_notify"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/button_help"
+        app:layout_constraintEnd_toStartOf="@id/button_oculting"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_baseline_message_24"
+        android:background="@null" />
+
+    <ImageButton
+        android:id="@+id/button_oculting"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/button_notify"
+        app:layout_constraintEnd_toStartOf="@id/button_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_remove_red_eye_24"
+        android:background="@null" />
+
+    <ImageButton
+        android:id="@+id/button_profile"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/button_oculting"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_round_person_24"
+        android:background="@null" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_balance"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/text_name"
+        android:orientation="vertical"
+        android:background="@color/dark_gray">
+
+        <TextView
+            android:id="@+id/text_balance_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_gray"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="10sp"
+            android:text="@string/text_balance" />
+
+        <TextView
+            android:id="@+id/text_balance_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toBottomOf="@id/text_balance_tip"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="8sp"
+            android:text="@string/text_balance_coin" />
+
+        <TextView
+            android:id="@+id/text_balance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintTop_toBottomOf="@id/text_balance_tip"
+            app:layout_constraintStart_toEndOf="@id/text_balance_coin"
+            android:textSize="16sp"
+            android:text="@string/text_balance_value" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:backgroundTint="@color/gray"
+            android:padding="0dp"
+            android:hint="@string/text_button_extract"
+            android:textColorHint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container_shortcuts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container_balance"
+        android:layout_marginTop="24dp">
+
+        <ImageButton
+            android:id="@+id/button_extract"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_extract_alt_24"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/button_pay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/button_transfer"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/button_bring_money"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/button_more"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            android:background="@null" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/container_shortcuts"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="48dp"
+        android:textSize="16sp"
+        android:text="@string/text_offers"
+        android:textColor="@color/white"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_offers"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/light_gray"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/text_offers">
+
+        <TextView
+            android:id="@+id/text_invite_friends"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/text_share_bank"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/text_invite_friends" />
+
+        <TextView
+            android:id="@+id/text_share_bank"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_invite_friends"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:text="@string/text_share_bank" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/image_pix"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/container_offers"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:contentDescription="@string/image_pix_description"-->
+<!--        android:src="@drawable/ic_baseline_help_outline_24" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_pix"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/container_offers"-->
+<!--        app:layout_constraintStart_toEndOf="@id/image_pix"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginLeft="8dp"-->
+<!--        android:textSize="16sp"-->
+<!--        android:text="@string/text_pix"-->
+<!--        android:textColor="@color/white"/>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_pix">-->
+<!--        -->
+<!--        -->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
